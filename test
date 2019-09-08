@@ -1,0 +1,48 @@
+set ignorecase
+set smartcase
+set showmode
+set number
+set relativenumber
+set scrolloff=3
+set history=100000
+set ideajoin
+set clipboard
+set digraph
+
+" Insert mode shortcut
+inoremap <C-h> <Left>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-l> <Right>
+inoremap <C-a> <Home>
+inoremap <C-e> <End>
+inoremap <C-d> <Delete>
+" Yank to the end of line
+nnoremap Y y$
+" Quit visual mode
+vnoremap v <Esc>
+" Quit insert mode
+inoremap jj <Esc>
+inoremap jk <Esc>
+inoremap kk <Esc>
+" clear the highlighted search result
+nnoremap <Space>sc :nohlsearch<CR>
+" Move to the start of line
+nnoremap H ^
+" Move to the end of line
+nnoremap L $
+" Redo
+nnoremap U <C-r>
+" built in search looks better
+nnoremap / :action Find<CR>
+" but preserve ideavim search
+nnoremap <Space>/ /
+
+nnoremap <Space>gc :action GotoClass<CR>
+nnoremap <Space>ga :action GotoAction<CR>
+
+nnoremap <Space>fp :action ShowFilePath<CR>
+nnoremap <Space>pm :action ShowPopupMenu<CR>
+
+" Tab operation
+nnoremap tn gt
