@@ -8,6 +8,7 @@ set history=100000
 set ideajoin
 set clipboard
 set digraph
+set hlsearch
 
 "move line up or downC
 nnoremap <A-j> :m .+1<CR>==
@@ -46,7 +47,11 @@ nnoremap <Space>gc :action GotoClass<CR>
 nnoremap <Space>ga :action GotoAction<CR>
 nnoremap <Space>fp :action ShowFilePath<CR>
 nnoremap <Space>pm :action ShowPopupMenu<CR>
+nnoremap <space>] :action GotoImplementation<cr>
+nnoremap <space>[ :action GotoSuperMethod<cr>
 " Tab operation
 nnoremap tn gt
 nnoremap tp gT
+
+
 
