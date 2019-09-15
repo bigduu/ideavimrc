@@ -1,57 +1,60 @@
+let mapleader=" "
+set clipboard+=ideaput
+"为IdeaVim插件增加自动切换为英文输入法的功能
+set keep-english-in-normal
+"把leader设置为空格
+let mapleader = ' '
+" 启用vim surround功能
+set surround
+"共享系统粘贴板
+set clipboard=unnamed
 set ignorecase
 set smartcase
+set insearch
 set showmode
 set number
 set relativenumber
-set scrolloff=3
+set scrolloff=5
+set sidescroll=10
 set history=100000
 set ideajoin
 set clipboard
 set digraph
 set hlsearch
-
+"格式化代码 \r
+map \r :action ReformatCode<CR>
 "move line up or downC
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
-inoremap <A-j> <Esc>:m .+1<CR>==gi
-inoremap <A-k> <Esc>:m .-2<CR>==gi
 " Insert mode shortcut
 inoremap <C-h> <Left>
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-l> <Right>
-inoremap <C-a> <Home>
-inoremap <C-e> <End>
-inoremap <C-d> <Delete>
-" Yank to the end of line
-nnoremap Y y$
 " Quit visual mode
 vnoremap v <Esc>
 " Quit insert mode
 inoremap jj <Esc>
 inoremap jk <Esc>
 inoremap kk <Esc>
-" clear the highlighted search result
-nnoremap <Space>sc :nohlsearch<CR>
 " Move to the start of line
 nnoremap H ^
 " Move to the end of line
 nnoremap L $
-" Redo
-nnoremap U <C-r>
 " built in search looks better
 nnoremap / :action Find<CR>
 " but preserve ideavim search
 nnoremap <Space>/ /
 nnoremap <Space>gc :action GotoClass<CR>
 nnoremap <Space>ga :action GotoAction<CR>
-nnoremap <Space>fp :action ShowFilePath<CR>
-nnoremap <Space>pm :action ShowPopupMenu<CR>
-nnoremap <space>] :action GotoImplementation<cr>
-nnoremap <space>[ :action GotoSuperMethod<cr>
-" Tab operation
-nnoremap tn gt
-nnoremap tp gT
-
-
-
+noremap <space>gd :action GotoDeclaration<CR>
+noremap <space>gi :action GotoImplementation<CR>
+noremap <space>gs :action GotoSuperMethod<CR>
+nnoremap <c-s-j> gT
+nnoremap <c-s-k> gt
+noremap <c-s-h> :action Back<CR>
+noremap <c-s-l> :action Forward<CR>
+nnoremap <space>E :action Switcher<cr>
+" 关闭(close)其他的窗口 只剩下vim编辑区域
+nnoremap <leader>w :action HideAllWindows<CR>
+set clipboard+=ideaput
