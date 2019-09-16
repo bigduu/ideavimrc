@@ -6,8 +6,6 @@ set keep-english-in-normal
 let mapleader = ' '
 " 启用vim surround功能
 set surround
-"共享系统粘贴板
-set clipboard=unnamed
 set ignorecase
 set smartcase
 set insearch
@@ -21,8 +19,6 @@ set ideajoin
 set clipboard
 set digraph
 set hlsearch
-"格式化代码 \r
-map \r :action ReformatCode<CR>
 "move line up or downC
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
@@ -43,13 +39,18 @@ nnoremap H ^
 nnoremap L $
 " built in search looks better
 nnoremap / :action Find<CR>
-" but preserve ideavim search
-nnoremap <Space>/ /
+"格式化代码 \r
+map \r :action ReformatCode<CR>
+" space keymap
+nnoremap <space>== :ReformatCode
+noremap <Space>/ /
 nnoremap <Space>gc :action GotoClass<CR>
 nnoremap <Space>ga :action GotoAction<CR>
 noremap <space>gd :action GotoDeclaration<CR>
 noremap <space>gi :action GotoImplementation<CR>
 noremap <space>gs :action GotoSuperMethod<CR>
+nnoremap <space>f :action FindUsages<CR>
+nnoremap <space>r :action RenameElement<CR>
 nnoremap <c-s-j> gT
 nnoremap <c-s-k> gt
 noremap <c-s-h> :action Back<CR>
