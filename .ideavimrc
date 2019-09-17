@@ -1,4 +1,5 @@
-let mapleader=" "
+" 设置剪切板 与系统相通
+set clipboard = unnamed
 set clipboard+=ideaput
 "为IdeaVim插件增加自动切换为英文输入法的功能
 set keep-english-in-normal
@@ -6,27 +7,30 @@ set keep-english-in-normal
 let mapleader = ' '
 " 启用vim surround功能
 set surround
+"搜索忽略大小写 智能匹配大小写
 set ignorecase
 set smartcase
 set insearch
+set hlsearch
+" 左下角显示当前模式
 set showmode
+" 显示行号
 set number
 set relativenumber
+" 保持5行在屏幕底部
 set scrolloff=5
+" 保持10列代码在右边
 set sidescroll=10
 set history=100000
+
 set ideajoin
-set clipboard
-set digraph
-set hlsearch
+
 "move line up or downC
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
 " Insert mode shortcut
-inoremap <C-h> <Left>
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
-inoremap <C-l> <Right>
 " Quit visual mode
 vnoremap v <Esc>
 " Quit insert mode
@@ -35,12 +39,12 @@ inoremap jk <Esc>
 inoremap kk <Esc>
 " Move to the start of line
 nnoremap H ^
+vnoremap H ^
 " Move to the end of line
 nnoremap L $
+vnoremap L $
 " built in search looks better
 nnoremap / :action Find<CR>
-"格式化代码 \r
-map \r :action ReformatCode<CR>
 " space keymap
 nnoremap <space>== :ReformatCode
 noremap <Space>/ /
@@ -56,6 +60,8 @@ nnoremap <c-s-k> gt
 noremap <c-s-h> :action Back<CR>
 noremap <c-s-l> :action Forward<CR>
 nnoremap <space>E :action Switcher<cr>
+"debugger
+nnoremap <space>n :action ToggleLineBreakpoint<CR>
+nnoremap <space>p :action ShowExecutionPoin<CR>
 " 关闭(close)其他的窗口 只剩下vim编辑区域
 nnoremap <leader>w :action HideAllWindows<CR>
-set clipboard+=ideaput
