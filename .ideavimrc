@@ -28,6 +28,8 @@ set ideajoin
 "move line up or downC
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
+vnoremap <a-j> :'<,'>m +1<cr>==
+vnoremap <a-k> :'<,'>m -2<cr>==
 " Insert mode shortcut
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
@@ -65,3 +67,19 @@ nnoremap <space>n :action ToggleLineBreakpoint<CR>
 nnoremap <space>p :action ShowExecutionPoin<CR>
 " 关闭(close)其他的窗口 只剩下vim编辑区域
 nnoremap <leader>w :action HideAllWindows<CR>
+"显示javadoc
+nnoremap gjK :action QuickJavaDoc<CR>
+"bookMark
+nnoremap gb0 :action GotoBookmark0<CR>
+nnoremap gb1 :action GotoBookmark1<CR>
+nnoremap gb2 :action GotoBookmark2<CR>
+nnoremap gb3 :action GotoBookmark3<CR>
+nnoremap gb4 :action GotoBookmark4<CR>
+nnoremap gb5 :action GotoBookmark5<CR>
+nnoremap gb6 :action GotoBookmark6<CR>
+nnoremap gb7 :action GotoBookmark7<CR>
+nnoremap gb8 :action GotoBookmark8<CR>
+nnoremap gb9 :action GotoBookmark9<CR>
+nnoremap gjl :action GoToLinkTarget<CR>
+nnoremap gnb :action GotoNextBookmark<CR>
+nnoremap gpb :action GotoPreviousBookmark<CR>
