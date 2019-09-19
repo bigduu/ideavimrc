@@ -1,6 +1,5 @@
 " 设置剪切板 与系统相通
-set clipboard = unnamed
-set clipboard+=ideaput
+set clipboard+=unnamed
 "为IdeaVim插件增加自动切换为英文输入法的功能
 set keep-english-in-normal
 "把leader设置为空格
@@ -68,7 +67,7 @@ nnoremap <space>p :action ShowExecutionPoin<CR>
 " 关闭(close)其他的窗口 只剩下vim编辑区域
 nnoremap <leader>w :action HideAllWindows<CR>
 "显示javadoc
-nnoremap gjK :action QuickJavaDoc<CR>
+nnoremap gjd :action QuickJavaDoc<CR>
 "bookMark
 nnoremap gb0 :action GotoBookmark0<CR>
 nnoremap gb1 :action GotoBookmark1<CR>
