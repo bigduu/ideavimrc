@@ -76,7 +76,8 @@ nnoremap <space>sep :action ShowExecutionPoin<CR>
 " 关闭(close)其他的窗口 只剩下vim编辑区域
 nnoremap <leader>w :action HideAllWindows<CR>
 "显示javadoc
-nnoremap sjd :action QuickJavaDoc<CR>
+nnoremap <space>qj :action QuickJavaDoc<CR>
+inoremap <c-v> <esc>:action $Paste<cr>a
 
 
  
