@@ -42,7 +42,7 @@ noremap gd :action GotoDeclaration<CR>
 noremap gi :action GotoImplementation<CR>
 noremap gs :action GotoSuperMethod<CR>
 nnoremap fu :action FindUsages<CR>
-nnoremap <space>re :action RenameElement<CR>
+nnoremap re :action RenameElement<CR>
 nnoremap <c-CR> :action EditorSplitLine<cr>
 nnoremap <c-s-CR> :action EditorStartNewLineBefore<cr>
 noremap <c-s-h> :action Back<CR>
@@ -60,6 +60,3 @@ nnoremap <leader>w :action HideAllWindows<CR>
 "显示javadoc
 nnoremap qj :action QuickJavaDoc<CR>
 inoremap <c-v> <esc>:action $Paste<cr>a
-
-
- 
