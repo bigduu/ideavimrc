@@ -47,6 +47,8 @@ nnoremap <c-CR> :action EditorSplitLine<cr>
 nnoremap <c-s-CR> :action EditorStartNewLineBefore<cr>
 noremap <c-s-h> :action Back<CR>
 noremap <c-s-l> :action Forward<CR>
+nnoremap <c-s-j> gT
+nnoremap <c-s-k> gt
 nnoremap <space>E :action Switcher<cr>
 " idea actions
 nmap <c-i> :action ShowIntentionActions<cr>
