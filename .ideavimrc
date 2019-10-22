@@ -45,17 +45,17 @@ nnoremap fu :action FindUsages<CR>
 nnoremap re :action RenameElement<CR>
 nnoremap <c-CR> :action EditorSplitLine<cr>
 nnoremap <c-s-CR> :action EditorStartNewLineBefore<cr>
-noremap <c-s-h> :action Back<CR>
-noremap <c-s-l> :action Forward<CR>
-nnoremap <c-s-j> gT
-nnoremap <c-s-k> gt
+noremap <c-s-k> :action Back<CR>
+noremap <c-s-j> :action Forward<CR>
+nnoremap <c-s-h> gT
+nnoremap <c-s-l> gt
 nnoremap <space>E :action Switcher<cr>
 " idea actions
 nmap <c-i> :action ShowIntentionActions<cr>
 imap <c-i> <Esc>:action ShowIntentionActions<cr>
 imap <ctrl><cr> :action EditorCompleteStatement <cr>
 "debugger
-nnoremap <space>tlbp :action ToggleLineBreakpoint<CR>
+nnoremap bp :action ToggleLineBreakpoint<CR>
 nnoremap <space>sep :action ShowExecutionPoin<CR>
 " 关闭(close)其他的窗口 只剩下vim编辑区域
 nnoremap <leader>w :action HideAllWindows<CR>
