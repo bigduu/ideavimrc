@@ -1,5 +1,5 @@
 " 设置剪切板 与系统相通
-set clipboard+=unnamed
+" set clipboard+=unnamed
 "为IdeaVim插件增加自动切换为英文输入法的功能
 set keep-english-in-normal
 "把leader设置为空格
