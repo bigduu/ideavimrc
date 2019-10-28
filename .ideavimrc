@@ -1,5 +1,5 @@
 " 设置剪切板 与系统相通
-" set clipboard+=unnamed
+set clipboard+=unnamed
 "为IdeaVim插件增加自动切换为英文输入法的功能
 set keep-english-in-normal
 "把leader设置为空格
@@ -43,8 +43,9 @@ noremap gi :action GotoImplementation<CR>
 noremap gs :action GotoSuperMethod<CR>
 nnoremap fu :action FindUsages<CR>
 nnoremap re :action RenameElement<CR>
-nnoremap <c-CR> :action EditorSplitLine<cr>
-nnoremap <c-s-CR> :action EditorStartNewLineBefore<cr>
+
+
+
 noremap <c-s-k> :action Back<CR>
 noremap <c-s-j> :action Forward<CR>
 nnoremap <c-s-h> gT
@@ -55,7 +56,7 @@ nmap <c-i> :action ShowIntentionActions<cr>
 imap <c-i> <Esc>:action ShowIntentionActions<cr>
 imap <ctrl><cr> :action EditorCompleteStatement <cr>
 "debugger
-nnoremap bp :action ToggleLineBreakpoint<CR>
+nnoremap <space>bp :action ToggleLineBreakpoint<CR>
 nnoremap <space>sep :action ShowExecutionPoin<CR>
 " 关闭(close)其他的窗口 只剩下vim编辑区域
 nnoremap <leader>w :action HideAllWindows<CR>
