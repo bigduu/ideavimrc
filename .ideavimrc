@@ -58,6 +58,8 @@ imap <ctrl><cr> :action EditorCompleteStatement <cr>
 "debugger
 nnoremap <space>bp :action ToggleLineBreakpoint<CR>
 nnoremap <space>sep :action ShowExecutionPoin<CR>
+nnoremap <space>o :action $EditorTranslateAction<CR>
+vnoremap <space>o :action $EditorTranslateAction<CR>
 " 关闭(close)其他的窗口 只剩下vim编辑区域
 nnoremap <leader>w :action HideAllWindows<CR>
 "显示javadoc
