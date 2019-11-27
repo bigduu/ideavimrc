@@ -64,4 +64,5 @@ vnoremap <space>o :action $EditorTranslateAction<CR>
 nnoremap <leader>w :action HideAllWindows<CR>
 "显示javadoc
 nnoremap qj :action QuickJavaDoc<CR>
+nnoremap qi :action QuickImplementations<cr>
 inoremap <c-v> <esc>:action $Paste<cr>a
