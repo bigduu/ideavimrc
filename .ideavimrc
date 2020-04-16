@@ -3,7 +3,6 @@ set clipboard+=unnamed
 "为IdeaVim插件增加自动切换为英文输入法的功能
 set keep-english-in-normal
 "把leader设置为空格
-let mapleader = ' '
 " 启用vim surround功能
 set surround
 "搜索忽略大小写 智能匹配大小写
@@ -22,6 +21,10 @@ set scrolloff=5
 set sidescroll=20
 set history=100000
 set ideajoin
+set easymotion
+set timeoutlen=1000 ttimeoutlen=0
+
+
 
 " Quit visual mode
 vnoremap v <Esc>
@@ -33,27 +36,29 @@ inoremap kk <Esc>
 " built in search looks better
 nnoremap / :action Find<CR>
 " space keymap
-nnoremap <space>== :ReformatCode<cr>
+nnoremap <space>== :action ReformatCode<cr>
 noremap <Space>/ /
 nnoremap fp :action FindInPath<cr>
 nnoremap ga :action GotoAction<cr>
+vnoremap ga :action GotoAction<cr>
 nnoremap gc :action GotoClass<CR>
 noremap gd :action GotoDeclaration<CR>
 noremap gi :action GotoImplementation<CR>
+noremap gf :action GotoFile<CR>
 noremap gs :action GotoSuperMethod<CR>
 nnoremap fu :action FindUsages<CR>
 nnoremap re :action RenameElement<CR>
 
 
 
-noremap <c-s-k> :action Back<CR>
-noremap <c-s-j> :action Forward<CR>
+noremap <c-o> :action Back<CR>
+noremap <c-i> :action Forward<CR>
 nnoremap <c-s-h> gT
 nnoremap <c-s-l> gt
 nnoremap <space>E :action Switcher<cr>
 " idea actions
-nmap <c-i> :action ShowIntentionActions<cr>
-imap <c-i> <Esc>:action ShowIntentionActions<cr>
+nmap <c-h> :action ShowIntentionActions<cr>
+imap <c-h> <Esc>:action ShowIntentionActions<cr>
 imap <ctrl><cr> :action EditorCompleteStatement <cr>
 "debugger
 nnoremap <space>bp :action ToggleLineBreakpoint<CR>
@@ -61,12 +66,11 @@ nnoremap <space>sep :action ShowExecutionPoin<CR>
 nnoremap <space>o :action $EditorTranslateAction<CR>
 vnoremap <space>o :action $EditorTranslateAction<CR>
 " 关闭(close)其他的窗口 只剩下vim编辑区域
-nnoremap <leader>w :action HideAllWindows<CR>
+nnoremap <space>w :action HideAllWindows<CR>
 "显示javadoc
 nnoremap qj :action QuickJavaDoc<CR>
 nnoremap qi :action QuickImplementations<cr>
 inoremap <c-v> <esc>:action $Paste<cr>a
-
 
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
