@@ -57,12 +57,13 @@ nnoremap <c-s-h> gT
 nnoremap <c-s-l> gt
 nnoremap <space>E :action Switcher<cr>
 " idea actions
-nmap <c-h> :action ShowIntentionActions<cr>
-imap <c-h> <Esc>:action ShowIntentionActions<cr>
+nmap <c-u> :action ShowIntentionActions<cr>
+imap <c-u> <Esc> :action ShowIntentionActions<cr>
 imap <ctrl><cr> :action EditorCompleteStatement <cr>
 "debugger
 nnoremap <space>bp :action ToggleLineBreakpoint<CR>
 nnoremap <space>sep :action ShowExecutionPoin<CR>
+
 nnoremap <space>o :action $EditorTranslateAction<CR>
 vnoremap <space>o :action $EditorTranslateAction<CR>
 " 关闭(close)其他的窗口 只剩下vim编辑区域
