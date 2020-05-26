@@ -1,6 +1,6 @@
 " 设置剪切板 与系统相通
 set clipboard+=unnamed
-"为ideavim插件增加自动切换为英文输入法的功能
+"为IdeaVim插件增加自动切换为英文输入法的功能
 set keep-english-in-normal
 "把leader设置为空格
 " 启用vim surround功能
@@ -29,58 +29,58 @@ set timeoutlen=1000 ttimeoutlen=0
 
 
 
-" quit visual mode
-vnoremap v <esc>
-" quit insert mode
-inoremap jj <esc>
-inoremap jk <esc>
-inoremap kk <esc>
+" Quit visual mode
+vnoremap v <Esc>
+" Quit insert mode
+inoremap jj <Esc>
+inoremap jk <Esc>
+inoremap kk <Esc>
 
 " built in search looks better
-nnoremap / :action find<cr>
+nnoremap / :action Find<CR>
 " space keymap
-nnoremap <space>== :action reformatcode<cr>
-noremap <space>/ /
-nnoremap fp :action findinpath<cr>
-nnoremap ga :action gotoaction<cr>
-vnoremap ga :action gotoaction<cr>
-nnoremap gc :action gotoclass<cr>
-noremap gd :action gotodeclaration<cr>
-noremap gi :action gotoimplementation<cr>
-noremap gf :action gotofile<cr>
-noremap gs :action gotosupermethod<cr>
-nnoremap fu :action findusages<cr>
-nnoremap re :action renameelement<cr>
+nnoremap <space>== :action ReformatCode<cr>
+noremap <Space>/ /
+nnoremap fp :action FindInPath<cr>
+nnoremap ga :action GotoAction<cr>
+vnoremap ga :action GotoAction<cr>
+nnoremap gc :action GotoClass<CR>
+noremap gd :action GotoDeclaration<CR>
+noremap gi :action GotoImplementation<CR>
+noremap gf :action GotoFile<CR>
+noremap gs :action GotoSuperMethod<CR>
+nnoremap fu :action FindUsages<CR>
+nnoremap re :action RenameElement<CR>
 
 
 
-noremap <c-o> :action back<cr>
-noremap <c-i> :action forward<cr>
-nnoremap <c-s-h> gt
+noremap <c-o> :action Back<CR>
+noremap <c-i> :action Forward<CR>
+nnoremap <c-s-h> gT
 nnoremap <c-s-l> gt
-nnoremap <space>e :action switcher<cr>
+nnoremap <space>E :action Switcher<cr>
 " idea actions
-nmap <c-u> :action showintentionactions<cr>
-imap <c-u> <esc> :action showintentionactions<cr>
-imap <ctrl><cr> :action editorcompletestatement <cr>
+nmap <c-u> :action ShowIntentionActions<cr>
+imap <c-u> <Esc> :action ShowIntentionActions<cr>
+imap <ctrl><cr> :action EditorCompleteStatement <cr>
 "debugger
-nnoremap <space>bp :action togglelinebreakpoint<cr>
-nnoremap <space>sep :action showexecutionpoin<cr>
+nnoremap <space>bp :action ToggleLineBreakpoint<CR>
+nnoremap <space>sep :action ShowExecutionPoin<CR>
 
-nnoremap <space>o :action $editortranslateaction<cr>
-vnoremap <space>o :action $editortranslateaction<cr>
+nnoremap <space>o :action $EditorTranslateAction<CR>
+vnoremap <space>o :action $EditorTranslateAction<CR>
 " 关闭(close)其他的窗口 只剩下vim编辑区域
-nnoremap <space>w :action hideallwindows<cr>
+nnoremap <space>w :action HideAllWindows<CR>
 "显示javadoc
-nnoremap qj :action quickjavadoc<cr>
-nnoremap qi :action quickimplementations<cr>
-inoremap <c-v> <esc>:action $paste<cr>a
+nnoremap qj :action QuickJavaDoc<CR>
+nnoremap qi :action QuickImplementations<cr>
+inoremap <c-v> <esc>:action $Paste<cr>a
 
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 
-nnoremap <c-/> :action commentbylinecomment<cr>
-vnoremap <c-/> :action commentbyblockcomment<cr>
-nnoremap sp :action filestructurepopup<cr>
+nnoremap <c-/> :action CommentByLineComment<cr>
+vnoremap <c-/> :action CommentByBlockComment<cr>
+nnoremap sp :action FileStructurePopup<cr>
