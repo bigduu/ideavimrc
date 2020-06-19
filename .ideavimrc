@@ -71,16 +71,19 @@ nnoremap <space>o :action $EditorTranslateAction<CR>
 vnoremap <space>o :action $EditorTranslateAction<CR>
 " 关闭(close)其他的窗口 只剩下vim编辑区域
 nnoremap <space>w :action HideAllWindows<CR>
-"显示javadoc
-nnoremap qj :action QuickJavaDoc<CR>
-nnoremap qi :action QuickImplementations<cr>
-inoremap <c-v> <esc>:action $Paste<cr>a
+nnoremap <space>w :action NextProjectWindow<CR>
 
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 
+
+
+"显示javadoc
+nnoremap qj :action QuickJavaDoc<CR>
+nnoremap qi :action QuickImplementations<cr>
+inoremap <c-v> <esc>:action $Paste<cr>a
 nnoremap <c-/> :action CommentByLineComment<cr>
 vnoremap <c-/> :action CommentByBlockComment<cr>
 nnoremap sp :action FileStructurePopup<cr>
