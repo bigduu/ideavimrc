@@ -29,72 +29,77 @@ set ideajoin
 set easymotion
 set timeoutlen=1000 ttimeoutlen=0
 
-nmap <c-h> <c-w>h
-nmap <c-l> <c-w>l
-nmap <c-j> <c-w>j
-nmap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap L $
+nnoremap H ^
+
 
 " tabs
-nmap <c-s-h> gT
-nmap <c-s-l> gt
+nnoremap <c-s-h> gT
+nnoremap <c-s-l> gt
 
 " Quit visual mode
-vmap v <Esc>
+vnoremap v <Esc>
 
 " Quit insert mode
-imap jj <Esc>
-imap jk <Esc>
-imap kk <Esc>
+inoremap jj <Esc>
+inoremap jk <Esc>
+inoremap kk <Esc>
 
 " built in search looks better
-nmap / :action Find<CR>
+nnoremap / :action Find<CR>
 
 " space keymap
-nmap <space>== :action ReformatCode<cr>
-nmap <space>/ /
+nnoremap <space>== :action ReformatCode<CR>
+nnoremap <space>/ /
 
 " code navigation
-nmap sp :action FileStructurePopup<cr>
-nmap fp :action FindInPath<cr>
-nmap ga :action GotoAction<cr>
-vmap ga :action GotoAction<cr>
-nmap gc :action GotoClass<CR>
-nmap gd :action GotoDeclaration<CR>
-nmap gi :action GotoImplementation<CR>
-nmap gf :action GotoFile<CR>
-nmap gs :action GotoSuperMethod<CR>
-nmap fu :action FindUsages<CR>
-nmap <c-o> :action Back<CR>
-nmap <c-i> :action Forward<CR>
+nnoremap sp :action FileStructurePopup<CR>
+nnoremap fp :action FindInPath<CR>
+nnoremap ga :action GotoAction<CR>
+vnoremap ga :action GotoAction<CR>
+nnoremap gc :action GotoClass<CR>
+nnoremap gd :action GotoDeclaration<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gf :action GotoFile<CR>
+nnoremap gs :action GotoSuperMethod<CR>
+nnoremap fu :action FindUsages<CR>
+nnoremap <c-o> :action Back<CR>
+nnoremap <c-i> :action Forward<CR>
 
 
 " code refactoring
-nmap re :action RenameElement<CR>
+nnoremap re :action RenameElement<CR>
 
 " idea actions
-nmap <c-u> :action ShowIntentionActions<cr>
-imap <c-u> <Esc> :action ShowIntentionActions<cr>
-imap <ctrl><cr> :action EditorCompleteStatement <cr>
-imap <c-v> <esc>:action $Paste<cr>a
+nnoremap <c-u> :action ShowIntentionActions<CR>
+inoremap <c-u><Esc> :action ShowIntentionActions<CR>
+inoremap <ctrl><CR> :action EditorCompleteStatement<CR>
+inoremap <c-v><esc> :action $Paste<CR>a
 
 "debugger
-nmap <space>bp :action ToggleLineBreakpoint<CR>
+nnoremap <space>bp :action ToggleLineBreakpoint<CR>
 
 " translation
-nmap <space>o :action $EditorTranslateAction<CR>
-vmap <space>o :action $EditorTranslateAction<CR>
+nnoremap <space>o :action $EditorTranslateAction<CR>
+vnoremap <space>o :action $EditorTranslateAction<CR>
+nnoremap <space>r :action $TranslateAndReplaceAction<cr>
+vnoremap <space>r :action $TranslateAndReplaceAction<cr>
 
 " windows actions
-nmap <space>E :action Switcher<cr>
-nmap <space>w :action HideAllWindows<CR>
-nmap <space>nw :action NextProjectWindow<cr>
-nmap <space>pw :action PreviousProjectWindow<cr>
-nmap <space>ow :action OpenProjectWindows<CR>
+nnoremap <space>E :action Switcher<CR>
+nnoremap <space>w :action HideAllWindows<CR>
+nnoremap <space>nw :action NextProjectWindow<CR>
+nnoremap <space>pw :action PreviousProjectWindow<CR>
+nnoremap <space>;w :action OpenProjectWindows<CR>
 
 " comment
-nmap <c-/> :action CommentByLineComment<cr>
-vmap <c-/> :action CommentByBlockComment<cr>
+nnoremap <c-/> :action CommentByLineComment<CR>
+vnoremap <c-/> :action CommentByBlockComment<CR>
 
 " javadoc
-nmap qj :action QuickJavaDoc<CR>
-nmap qi :action QuickImplementations<cr>
+nnoremap qj :action QuickJavaDoc<CR>
+nnoremap qi :action QuickImplementations<CR>
