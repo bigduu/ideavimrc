@@ -76,9 +76,9 @@ nnoremap re :action RenameElement<CR>
 
 " idea actions
 nnoremap <c-u> :action ShowIntentionActions<CR>
-inoremap <c-u><Esc> :action ShowIntentionActions<CR>
+inoremap <c-u> <Esc>:action ShowIntentionActions<CR>
 inoremap <ctrl><CR> :action EditorCompleteStatement<CR>
-inoremap <c-v><esc> :action $Paste<CR>a
+inoremap <c-v> <Esc>:action $Paste<CR>a
 
 "debugger
 nnoremap <space>bp :action ToggleLineBreakpoint<CR>
