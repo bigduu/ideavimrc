@@ -1,61 +1,58 @@
-" 设置剪切板 与系统相通
+let mapleader=" "
 set clipboard+=unnamed
-
-"为IdeaVim插件增加自动切换为英文输入法的功能
 set keep-english-in-normal
-
-" 启用vim surround功能
-set surround
-" 搜索忽略大小写 智能匹配大小写
 set ignorecase
 set smartcase
 set insearch
 set hlsearch
-
-" 左下角显示当前模式
 set showmode
-
-" 显示行号
 set number
 set relativenumber
-
-" 保持5行在屏幕底部
 set scrolloff=5
-
-" 保持10列代码在右边
 set sidescroll=20
 set history=100000
-set ideajoin
-set easymotion
 set timeoutlen=1000 ttimeoutlen=0
-
+" ideajoin
+set ideajoin
+set idearefactormode=keep
+" easymotion
+set easymotion
+" argtextobj
+set argtextobj
+" ReplaceWithRegister
+" commands： gr,grr
+set ReplaceWithRegister
+" multiple-cursors
+" commands: <A-n>,<A-x>,<A-p>,g<A-n>
+set multiple-cursors
+" surround
+" commands: ys,cs,ds
+set surround
+" highlightedyank
+set highlightedyank
+let g:highlightedyank_highlight_duration = "1000"
+let g:highlightedyank_highlight_duration = "-1"
+let g:highlightedyank_highlight_color = "rgba(160, 160, 160, 155)"
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap L $
 nnoremap H ^
-
-
 " tabs
 nnoremap <c-s-h> gT
 nnoremap <c-s-l> gt
-
 " Quit visual mode
 vnoremap v <Esc>
-
 " Quit insert mode
 inoremap jj <Esc>
 inoremap jk <Esc>
 inoremap kk <Esc>
-
 " built in search looks better
 nnoremap / :action Find<CR>
-
 " space keymap
 nnoremap <space>== :action ReformatCode<CR>
 nnoremap <space>/ /
-
 " code navigation
 nnoremap sp :action FileStructurePopup<CR>
 nnoremap fp :action FindInPath<CR>
@@ -69,37 +66,29 @@ nnoremap gs :action GotoSuperMethod<CR>
 nnoremap fu :action FindUsages<CR>
 nnoremap <c-o> :action Back<CR>
 nnoremap <c-i> :action Forward<CR>
-
-
 " code refactoring
 nnoremap re :action RenameElement<CR>
-
 " idea actions
 nnoremap <c-u> :action ShowIntentionActions<CR>
 inoremap <c-u> <Esc>:action ShowIntentionActions<CR>
 inoremap <ctrl><CR> :action EditorCompleteStatement<CR>
 inoremap <c-v> <Esc>:action $Paste<CR>a
-
 "debugger
 nnoremap <space>bp :action ToggleLineBreakpoint<CR>
-
 " translation
 nnoremap <space>o :action $EditorTranslateAction<CR>
 vnoremap <space>o :action $EditorTranslateAction<CR>
 nnoremap <space>r :action $TranslateAndReplaceAction<cr>
 vnoremap <space>r :action $TranslateAndReplaceAction<cr>
-
 " windows actions
 nnoremap <space>E :action Switcher<CR>
 nnoremap <space>w :action HideAllWindows<CR>
 nnoremap <space>nw :action NextProjectWindow<CR>
 nnoremap <space>pw :action PreviousProjectWindow<CR>
 nnoremap <space>;w :action OpenProjectWindows<CR>
-
 " comment
 nnoremap <c-/> :action CommentByLineComment<CR>
 vnoremap <c-/> :action CommentByBlockComment<CR>
-
 " javadoc
 nnoremap qj :action QuickJavaDoc<CR>
 nnoremap qi :action QuickImplementations<CR>
