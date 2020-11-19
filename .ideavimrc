@@ -1,4 +1,4 @@
-let mapleader=" "
+let mapleader=","
 set clipboard+=unnamed
 set keep-english-in-normal
 set ignorecase
@@ -49,46 +49,53 @@ inoremap jj <Esc>
 inoremap jk <Esc>
 inoremap kk <Esc>
 " built in search looks better
-nnoremap / :action Find<CR>
+nnoremap <leader>/ :action Find<CR>
 " space keymap
-nnoremap <space>== :action ReformatCode<CR>
-nnoremap <space>/ /
+nnoremap <leader>ff :action ReformatCode<CR>
 " code navigation
-nnoremap sp :action FileStructurePopup<CR>
-nnoremap fp :action FindInPath<CR>
-nnoremap ga :action GotoAction<CR>
-vnoremap ga :action GotoAction<CR>
-nnoremap gc :action GotoClass<CR>
+nnoremap <leader>sp :action FileStructurePopup<CR>
+nnoremap <leader>ga :action GotoAction<CR>
+vnoremap <leader>ga :action GotoAction<CR>
+nnoremap <leader>gc :action GotoClass<CR>
+nnoremap <leader>gf :action GotoFile<CR>
+nnoremap <leader>ep :action EditorPopupMenu<CR>
+nnoremap <leader>rp :action Refactorings.QuickListPopupAction<CR>
+vnoremap <leader>rp :action Refactorings.QuickListPopupAction<CR>
+nnoremap <leader>gp :action Git.Menu<CR>
+
+
 nnoremap gd :action GotoDeclaration<CR>
 nnoremap gi :action GotoImplementation<CR>
-nnoremap gf :action GotoFile<CR>
 nnoremap gs :action GotoSuperMethod<CR>
 nnoremap fu :action FindUsages<CR>
+nnoremap fp :action FindInPath<CR>
 nnoremap <c-o> :action Back<CR>
 nnoremap <c-i> :action Forward<CR>
 " code refactoring
-nnoremap re :action RenameElement<CR>
+nnoremap <leader>re :action RenameElement<CR>
 " idea actions
-nnoremap <c-u> :action ShowIntentionActions<CR>
-inoremap <c-u> <Esc>:action ShowIntentionActions<CR>
+nnoremap <leader>l :action ShowIntentionActions<CR>
+inoremap <leader>l <Esc>:action ShowIntentionActions<CR>
 inoremap <ctrl><CR> :action EditorCompleteStatement<CR>
 inoremap <c-v> <Esc>:action $Paste<CR>a
 "debugger
-nnoremap <space>bp :action ToggleLineBreakpoint<CR>
+nnoremap <leader>bp :action ToggleLineBreakpoint<CR>
 " translation
-nnoremap <space>o :action $EditorTranslateAction<CR>
-vnoremap <space>o :action $EditorTranslateAction<CR>
-nnoremap <space>r :action $TranslateAndReplaceAction<cr>
-vnoremap <space>r :action $TranslateAndReplaceAction<cr>
+nnoremap <leader>t :action $EditorTranslateAction<CR>
+vnoremap <leader>t :action $EditorTranslateAction<CR>
+"nnoremap <leader>r :action $TranslateAndReplaceAction<cr>
+"vnoremap <leader>r :action $TranslateAndReplaceAction<cr>
+" project actions"
+nnoremap <leader>v :action SelectInProjectView<CR>
+nnoremap <leader>p :action HideAllWindows<CR>
 " windows actions
-nnoremap <space>E :action Switcher<CR>
-nnoremap <space>w :action HideAllWindows<CR>
-nnoremap <space>nw :action NextProjectWindow<CR>
-nnoremap <space>pw :action PreviousProjectWindow<CR>
-nnoremap <space>;w :action OpenProjectWindows<CR>
+nnoremap <leader>E :action Switcher<CR>
+
+nnoremap <leader>bn :action NextProjectWindow<CR>
+nnoremap <leader>bp :action PreviousProjectWindow<CR>
+nnoremap <leader>b; :action OpenProjectWindows<CR>
 " comment
 nnoremap <c-/> :action CommentByLineComment<CR>
 vnoremap <c-/> :action CommentByBlockComment<CR>
 " javadoc
-nnoremap qj :action QuickJavaDoc<CR>
 nnoremap qi :action QuickImplementations<CR>
