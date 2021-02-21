@@ -49,7 +49,8 @@ inoremap jj <Esc>
 inoremap jk <Esc>
 inoremap kk <Esc>
 " built in search looks better
-nnoremap <leader>/ :action Find<CR>
+nnoremap / :action Find<CR>
+nnoremap <leader>/ /<CR>
 " space keymap
 nnoremap <leader>ff :action ReformatCode<CR>
 " code navigation
@@ -61,7 +62,13 @@ nnoremap <leader>gf :action GotoFile<CR>
 nnoremap <leader>ep :action EditorPopupMenu<CR>
 nnoremap <leader>rp :action Refactorings.QuickListPopupAction<CR>
 vnoremap <leader>rp :action Refactorings.QuickListPopupAction<CR>
+
 nnoremap <leader>gp :action Git.Menu<CR>
+
+nnoremap <leader>dn :action StepOver<CR>
+nnoremap <leader>do :action StepOut<CR>
+nnoremap <leader>di :action StepInto<CR>
+
 
 
 nnoremap gd :action GotoDeclaration<CR>
@@ -79,7 +86,7 @@ inoremap <leader>l <Esc>:action ShowIntentionActions<CR>
 inoremap <ctrl><CR> :action EditorCompleteStatement<CR>
 inoremap <c-v> <Esc>:action $Paste<CR>a
 "debugger
-nnoremap <leader>bp :action ToggleLineBreakpoint<CR>
+nnoremap <leader>dp :action ToggleLineBreakpoint<CR>
 " translation
 nnoremap <leader>t :action $EditorTranslateAction<CR>
 vnoremap <leader>t :action $EditorTranslateAction<CR>
@@ -87,7 +94,7 @@ vnoremap <leader>t :action $EditorTranslateAction<CR>
 "vnoremap <leader>r :action $TranslateAndReplaceAction<cr>
 " project actions"
 nnoremap <leader>v :action SelectInProjectView<CR>
-nnoremap <leader>p :action HideAllWindows<CR>
+nnoremap <leader>w :action HideAllWindows<CR>
 " windows actions
 nnoremap <leader>E :action Switcher<CR>
 
