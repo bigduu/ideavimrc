@@ -1,9 +1,7 @@
 let mapleader=","
 set clipboard+=unnamed
-set keep-english-in-normal
 set ignorecase
 set smartcase
-set insearch
 set hlsearch
 set showmode
 set number
@@ -11,7 +9,7 @@ set relativenumber
 set scrolloff=5
 set sidescroll=20
 set history=100000
-set timeoutlen=1000 ttimeoutlen=0
+set startofline
 " ideajoin
 set ideajoin
 set idearefactormode=keep
@@ -30,6 +28,7 @@ set multiple-cursors
 set surround
 " highlightedyank
 set highlightedyank
+set NERDTree
 let g:highlightedyank_highlight_duration = "1000"
 let g:highlightedyank_highlight_duration = "-1"
 let g:highlightedyank_highlight_color = "rgba(160, 160, 160, 155)"
@@ -37,11 +36,13 @@ nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
-nnoremap L $
-nnoremap H ^
+nnoremap <c-c> <c-w>c
 " tabs
-nnoremap <c-s-h> gT
-nnoremap <c-s-l> gt
+nnoremap <s-h> gT
+nnoremap <s-l> gt
+
+nnoremap <s-c-l> :tabm +1<CR>
+nnoremap <s-c-h> :tabm -1<CR>
 " Quit visual mode
 vnoremap v <Esc>
 " Quit insert mode
@@ -50,7 +51,7 @@ inoremap jk <Esc>
 inoremap kk <Esc>
 " built in search looks better
 nnoremap / :action Find<CR>
-nnoremap <leader>/ /<CR>
+nnoremap <leader>/ /
 " space keymap
 nnoremap <leader>ff :action ReformatCode<CR>
 " code navigation
@@ -59,25 +60,28 @@ nnoremap <leader>ga :action GotoAction<CR>
 vnoremap <leader>ga :action GotoAction<CR>
 nnoremap <leader>gc :action GotoClass<CR>
 nnoremap <leader>gf :action GotoFile<CR>
-nnoremap <leader>ep :action EditorPopupMenu<CR>
 nnoremap <leader>rp :action Refactorings.QuickListPopupAction<CR>
 vnoremap <leader>rp :action Refactorings.QuickListPopupAction<CR>
+nnoremap <c-j> <c-f>zz
+nnoremap <c-k> <c-b>zz
 
 nnoremap <leader>gp :action Git.Menu<CR>
 
-nnoremap <leader>dn :action StepOver<CR>
-nnoremap <leader>do :action StepOut<CR>
-nnoremap <leader>di :action StepInto<CR>
+nnoremap <leader>n :action StepOver<CR>
+nnoremap <leader>o :action StepOut<CR>
+nnoremap <leader>i :action StepInto<CR>
 
+nmap <C-o> <Action>(Back)
+nmap <C-i> <Action>(Forward)
 
+nmap <leader>ar :action Run<CR>
+nmap <leader>ad :action Debug<CR>
 
 nnoremap gd :action GotoDeclaration<CR>
 nnoremap gi :action GotoImplementation<CR>
 nnoremap gs :action GotoSuperMethod<CR>
 nnoremap fu :action FindUsages<CR>
 nnoremap fp :action FindInPath<CR>
-nnoremap <c-o> :action Back<CR>
-nnoremap <c-i> :action Forward<CR>
 " code refactoring
 nnoremap <leader>re :action RenameElement<CR>
 " idea actions
@@ -88,21 +92,22 @@ inoremap <c-v> <Esc>:action $Paste<CR>a
 "debugger
 nnoremap <leader>dp :action ToggleLineBreakpoint<CR>
 " translation
-nnoremap <leader>t :action $EditorTranslateAction<CR>
-vnoremap <leader>t :action $EditorTranslateAction<CR>
-"nnoremap <leader>r :action $TranslateAndReplaceAction<cr>
-"vnoremap <leader>r :action $TranslateAndReplaceAction<cr>
+nnoremap <leader>tr :action $EditorTranslateAction<CR>
+vnoremap <leader>tr :action $EditorTranslateAction<CR>
 " project actions"
 nnoremap <leader>v :action SelectInProjectView<CR>
-nnoremap <leader>w :action HideAllWindows<CR>
+nnoremap <c-b>n :action NextProjectWindow<CR>
+nnoremap <c-b>p :action PreviousProjectWindow<CR>
+nnoremap <c-b>; :action OpenProjectWindows<CR>
 " windows actions
-nnoremap <leader>E :action Switcher<CR>
-
-nnoremap <leader>bn :action NextProjectWindow<CR>
-nnoremap <leader>bp :action PreviousProjectWindow<CR>
-nnoremap <leader>b; :action OpenProjectWindows<CR>
+nnoremap <leader>p :action ActivateProjectToolWindow<CR>
+nnoremap <leader>ta :action ActivateTerminalToolWindow<CR>
+nnoremap <leader>w :action HideAllWindows<CR>
+nnoremap <leader>sw :action Switcher<CR>
 " comment
 nnoremap <c-/> :action CommentByLineComment<CR>
 vnoremap <c-/> :action CommentByBlockComment<CR>
 " javadoc
 nnoremap qi :action QuickImplementations<CR>
+" terminal
+nnoremap <c-t> :action ActivateTerminalToolWindow<CR>
